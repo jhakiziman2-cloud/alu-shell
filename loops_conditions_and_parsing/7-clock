@@ -1,10 +1,2 @@
 #!/usr/bin/env bash
-#Tme
-hour=0
-
-while [ "$hour" -le 12 ]
-do
-   
-
-    hour=$((hour + 1))
-done
+#the comment part
