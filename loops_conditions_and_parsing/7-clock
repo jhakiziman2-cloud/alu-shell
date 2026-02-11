@@ -1,2 +1,17 @@
 #!/usr/bin/env bash
-#the comment part
+#the comment section
+hour=0
+
+while [ "$hour" -le 12 ]
+do
+    minute=1
+
+    while [ "$minute" -le 59 ]
+    do
+        echo "Hour: $hour"
+        echo "Minute: $minute"
+        minute=$((minute + 1))
+    done
+
+    hour=$((hour + 1))
+done
