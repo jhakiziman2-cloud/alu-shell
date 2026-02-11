@@ -1,13 +1,10 @@
 #!/usr/bin/env bash
 #comment
 for pid in /proc/[0-9]*; do
-    pid_number=$(basename "$pid")
-
     if [ -r "$pid/comm" ]; then
-        process_name=$(cat "$pid/comm")
-
-        if [[ "$process_name" == *bash* ]]; then
-            echo "PID: $pid_number - Process: $process_name"
+        name=$(cat "$pid/comm")
+        if [[ "$name" == *bash* ]]; then
+            echo "$(basename "$pid") $name"
         fi
     fi
 done
