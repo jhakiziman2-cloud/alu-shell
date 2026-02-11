@@ -1,14 +1,11 @@
 #!/usr/bin/env bash
-# Loop through all numeric /proc directories (these are PIDs)
+
 for pid in /proc/[0-9]*; do
-    # Extract PID number
     pid_number=$(basename "$pid")
 
-    # Check if comm file exists and is readable
     if [[ -r "$pid/comm" ]]; then
         process_name=$(<"$pid/comm")
 
-        # Check if process name contains "bash"
         if [[ "$process_name" == *bash* ]]; then
             echo "PID: $pid_number - Process: $process_name"
         fi
